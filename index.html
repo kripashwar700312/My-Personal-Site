@@ -2,396 +2,234 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Kripashwar Dhungana – Software Engineer</title>
-    <meta name="description" content="Personal website of Kripashwar Dhungana – software engineer, startup founder, and indoor cricket enthusiast." />
-    <meta name="theme-color" content="#0ea5e9" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Kripashwar — Portfolio</title>
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Kripashwar Dhungana – Software Engineer" />
-    <meta property="og:description" content="Software engineer building reliable fintech systems and playful cricket projects." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://your-domain.example" />
-    <meta property="og:image" content="https://your-domain.example/og-image.jpg" />
-
-    <!-- Favicon (you can replace the data URL with your own files) -->
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' ry='20' fill='%230ea5e9'/%3E%3Ctext x='50' y='58' font-size='60' text-anchor='middle' fill='white' font-family='Arial, Helvetica, sans-serif'%3EK%3C/text%3E%3C/svg%3E" />
-
-    <!-- Schema.org (JSON-LD) -->
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Kripashwar Dhungana",
-            "jobTitle": "Software Engineer",
-            "url": "https://your-domain.example",
-            "sameAs": [
-                "https://github.com/youruser",
-                "https://www.linkedin.com/in/youruser/",
-                "https://twitter.com/youruser"
-            ]
-        }
-    </script>
-
-    <style>
-        :root {
-            --bg: #0b1020;
-            --surface: #111833;
-            --text: #e6eaf2;
-            --muted: #9aa3b2;
-            --brand: #0ea5e9; /* sky-500 */
-            --brand-600: #0284c7;
-            --ring: rgba(14,165,233,.35);
-            --card: #0f172a;
-            --ok: #22c55e;
-            --warn: #f59e0b;
-            --err: #ef4444;
-            --shadow: 0 10px 30px rgba(0,0,0,.35);
-        }
-        * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-            background: var(--bg); color: var(--text);
-        }
-        a { color: var(--brand); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        img { max-width: 100%; display: block; border-radius: 16px; }
-
-        /* Layout */
-        .container { width: min(1100px, 92%); margin: 0 auto; }
-        .grid { display: grid; gap: 1.25rem; }
-        .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-        .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-
-        /* Header */
-        header {
-            position: sticky; top: 0; z-index: 50; backdrop-filter: saturate(1.1) blur(8px);
-            background: linear-gradient(180deg, rgba(11,16,32,.85), rgba(11,16,32,.45) 60%, rgba(11,16,32,0));
-            border-bottom: 1px solid rgba(255,255,255,.06);
-        }
-        .nav { display: flex; align-items: center; justify-content: space-between; padding: .8rem 0; }
-        .logo { display: flex; align-items: center; gap: .6rem; font-weight: 700; letter-spacing: .3px; }
-        .logo .dot { width: 10px; height: 10px; background: var(--brand); border-radius: 999px; box-shadow: 0 0 0 6px var(--ring); }
-        .nav a { color: var(--text); opacity: .9; }
-        .nav .links { display: none; gap: 1rem; }
-        .nav .btn { background: var(--brand); color: #081224; padding: .6rem .9rem; border-radius: 999px; font-weight: 600; box-shadow: var(--shadow); }
-        .menu { display: inline-flex; gap: .6rem; align-items: center; }
-        .menu button { background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,.1); padding: .45rem .7rem; border-radius: 10px; }
-
-        /* Sections */
-        section { padding: 72px 0; border-top: 1px solid rgba(255,255,255,.06); }
-        section:first-of-type { border-top: none; }
-        .title { font-size: clamp(1.6rem, 1.2rem + 1.8vw, 2.4rem); margin: 0 0 .6rem; }
-        .muted { color: var(--muted); }
-
-        /* Hero */
-        .hero { display: grid; gap: 2rem; align-items: center; padding: 56px 0 24px; }
-        .badge { display: inline-flex; align-items: center; gap: .5rem; font-size: .9rem; color: var(--brand); background: rgba(14,165,233,.12); border: 1px solid rgba(14,165,233,.35); padding: .35rem .6rem; border-radius: 999px; }
-        .headline { font-size: clamp(2rem, 1.2rem + 3.2vw, 3.4rem); line-height: 1.15; margin: .3rem 0 1rem; }
-        .kicker { font-size: 1.05rem; color: var(--muted); }
-        .cta { display: flex; gap: .8rem; margin-top: 1.2rem; }
-        .cta .primary { background: var(--brand); color: #081224; padding: .8rem 1rem; border-radius: 12px; font-weight: 700; box-shadow: var(--shadow); border: none; }
-        .cta .ghost { background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,.12); padding: .8rem 1rem; border-radius: 12px; }
-
-        /* Cards */
-        .card { background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)); border: 1px solid rgba(255,255,255,.08); border-radius: 18px; padding: 1rem; box-shadow: var(--shadow); }
-        .card h3 { margin: .2rem 0 .4rem; font-size: 1.15rem; }
-        .tag { font-size: .75rem; padding: .25rem .5rem; border: 1px solid rgba(255,255,255,.12); border-radius: 999px; color: var(--muted); }
-        .stack { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .6rem; }
-
-        /* Timeline */
-        .timeline { position: relative; padding-left: 1rem; }
-        .timeline::before { content: ""; position: absolute; left: 7px; top: .4rem; bottom: .4rem; width: 2px; background: rgba(255,255,255,.12); }
-        .titem { position: relative; margin-left: 1rem; margin-bottom: 1rem; }
-        .titem::before { content: ""; position: absolute; left: -1rem; top: .3rem; width: 14px; height: 14px; background: var(--brand); border-radius: 999px; box-shadow: 0 0 0 5px var(--ring); }
-
-        /* Footer */
-        footer { padding: 60px 0 80px; text-align: center; color: var(--muted); }
-
-        /* Responsive */
-        @media (min-width: 900px) {
-            .hero { grid-template-columns: 1.1fr .9fr; }
-            .nav .links { display: flex; }
-            .menu .hamburger { display: none; }
-        }
-
-        /* Mobile menu */
-        .mobile-panel { position: fixed; inset: 0; background: rgba(8,12,26,.7); display: none; }
-        .mobile-panel.active { display: block; }
-        .mobile-sheet { position: absolute; right: 0; top: 0; bottom: 0; width: min(92%, 380px); background: var(--surface); padding: 1rem; box-shadow: var(--shadow); }
-        .mobile-sheet a { display: block; padding: .9rem 0; border-bottom: 1px solid rgba(255,255,255,.06); }
-
-        /* Forms */
-        .input, textarea { width: 100%; padding: .8rem .9rem; background: #0a1227; border: 1px solid rgba(255,255,255,.1); color: var(--text); border-radius: 12px; outline: none; }
-        .input:focus, textarea:focus { border-color: var(--brand); box-shadow: 0 0 0 6px var(--ring); }
-        .btn { background: var(--brand); color: #081224; border: none; padding: .9rem 1rem; border-radius: 12px; font-weight: 700; box-shadow: var(--shadow); cursor: pointer; }
-
-        /* Utility */
-        .flex { display: flex; }
-        .items-center { align-items: center; }
-        .gap-6 { gap: 1.5rem; }
-        .center { display: grid; place-items: center; }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-pO9V5oU+8I1gXBr4mPzB0v4c2Vjv3I3pVQ9e8+5wM0OZkE+rXx2kvv0y6vRG4kvLy7yQRe9Tgk0Q8p1Tz5ue3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
+<!-- NAVBAR -->
 <header>
-    <div class="container nav">
-        <a href="#home" class="logo" aria-label="Home">
-            <span class="dot" aria-hidden="true"></span>
-            <span>Kripashwar</span>
-        </a>
-        <nav class="links" aria-label="Primary">
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#experience">Experience</a>
-            <a href="#blog">Blog</a>
-            <a href="#contact">Contact</a>
-        </nav>
-        <div class="menu">
-            <button id="themeToggle" aria-label="Toggle theme">🌙</button>
-            <button class="hamburger" id="menuBtn" aria-haspopup="menu" aria-controls="mobileMenu" aria-expanded="false">☰</button>
-            <a class="btn" href="#contact">Hire me</a>
+    <nav id="navbar">
+        <div class="nav-left">
+            <div class="logo">Kripashwar Dhungana</div>
         </div>
-    </div>
 
-    <!-- Mobile menu panel -->
-    <div id="mobileMenu" class="mobile-panel" role="dialog" aria-modal="true" aria-label="Mobile menu">
-        <div class="mobile-sheet">
-            <div class="flex items-center" style="justify-content: space-between; padding-bottom: .6rem; margin-bottom: .6rem; border-bottom: 1px solid rgba(255,255,255,.08);">
-                <div class="logo"><span class="dot"></span><span>Menu</span></div>
-                <button id="closeMenu">✕</button>
-            </div>
-            <a href="#about" onclick="closeMenu()">About</a>
-            <a href="#projects" onclick="closeMenu()">Projects</a>
-            <a href="#experience" onclick="closeMenu()">Experience</a>
-            <a href="#blog" onclick="closeMenu()">Blog</a>
-            <a href="#contact" onclick="closeMenu()">Contact</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+<!--            <li><a href="#blog">Blog</a></li>-->
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <button id="mode-toggle" aria-label="Toggle theme">🌙</button>
         </div>
-    </div>
+    </nav>
 </header>
 
-<main id="home" class="container">
-    <!-- Hero -->
-    <section class="hero">
-        <div>
-            <span class="badge">👋 Namaste! Based in Nepal.</span>
-            <h1 class="headline">I build reliable fintech systems and playful cricket apps.</h1>
-            <p class="kicker">I'm a software engineer and startup founder. I like Java, Spring Boot, and making complicated systems feel simple. Also running an indoor cricket academy for school kids.</p>
-            <div class="cta">
-                <a class="primary" href="#projects">See Projects</a>
-                <a class="ghost" href="./resume.pdf" download>Download Résumé</a>
-            </div>
-            <div class="flex gap-6" style="margin-top: 1.2rem; align-items:center;">
-                <a href="mailto:hello@your-domain.example" aria-label="Email">📧</a>
-                <a href="https://github.com/youruser" target="_blank" rel="noopener" aria-label="GitHub">🐙</a>
-                <a href="https://www.linkedin.com/in/youruser/" target="_blank" rel="noopener" aria-label="LinkedIn">💼</a>
-                <a href="https://twitter.com/youruser" target="_blank" rel="noopener" aria-label="Twitter">🐦</a>
-            </div>
-        </div>
-        <div>
-            <img src="https://images.unsplash.com/photo-1522199670076-2852f80289c7?q=80&w=1200&auto=format&fit=crop" alt="Desk setup with laptop" loading="lazy" />
-        </div>
-    </section>
+<!-- HERO -->
+<section id="home" class="hero">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
 
-    <!-- About -->
-    <section id="about">
-        <h2 class="title">About</h2>
-        <p class="muted">I’m currently building payment rails, QR-based transactions, and reporting systems in Java 21. I love self-hosted solutions, clean architecture, and tests that actually catch bugs.</p>
-        <div class="stack">
-            <span class="tag">Java 21</span>
-            <span class="tag">Spring Boot</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Kafka/RabbitMQ</span>
-            <span class="tag">Docker</span>
-            <span class="tag">Reactive</span>
-            <span class="tag">JPA</span>
+    <div class="hero-inner">
+        <h1 class="hero-title">Hi, I’m <span class="name">Kripashwar Dhungana</span></h1>
+        <p class="hero-sub">I build <span id="typing" aria-live="polite"></span></p>
+
+        <div class="hero-ctas">
+            <a class="btn resume" href="resume.pdf" download>
+                <!-- File / Download Icon -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right:8px;">
+                    <path d="M12 16v-8m0 0l-4 4m4-4l4 4M4 20h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"/>
+                </svg>
+                Download Resume
+            </a>
+
+            <a class="btn contact" href="#contact">
+                <!-- Envelope / Mail Icon -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right:8px;">
+                    <path d="M2 4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4zm2 0v.01M22 4v16M2 4l10 9 10-9"/>
+                </svg>
+                Contact Me
+            </a>
         </div>
-    </section>
 
-    <!-- Projects -->
-    <section id="projects">
-        <h2 class="title">Projects</h2>
-        <div class="grid grid-3">
-            <article class="card">
-                <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop" alt="Analytics dashboard" loading="lazy" />
-                <h3>Loan Insights Dashboard</h3>
-                <p class="muted">Aggregates loan data from multiple sources with AI summaries and anomaly detection.</p>
-                <div class="stack">
-                    <span class="tag">Spring Boot</span><span class="tag">Micrometer</span><span class="tag">Postgres</span>
-                </div>
-                <p><a href="#" aria-label="View project">View →</a></p>
-            </article>
-            <article class="card">
-                <img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?q=80&w=1200&auto=format&fit=crop" alt="Payment QR" loading="lazy" />
-                <h3>Fonepay QR Processor</h3>
-                <p class="muted">Reactive QR parsing and push payments with robust retries and reconciliations.</p>
-                <div class="stack">
-                    <span class="tag">Java</span><span class="tag">Reactor</span><span class="tag">JPA</span>
-                </div>
-                <p><a href="#" aria-label="View project">View →</a></p>
-            </article>
-            <article class="card">
-                <img src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?q=80&w=1200&auto=format&fit=crop" alt="Cricket ball" loading="lazy" />
-                <h3>Indoor Cricket Academy</h3>
-                <p class="muted">Scheduling, coach rosters, and training plans for school-level players.</p>
-                <div class="stack">
-                    <span class="tag">Next.js</span><span class="tag">Supabase</span><span class="tag">Tailwind</span>
-                </div>
-                <p><a href="#" aria-label="View project">View →</a></p>
-            </article>
+        <div class="hero-socials">
+            <!-- GitHub -->
+            <a href="https://github.com/kripashwar700312" target="_blank" aria-label="GitHub">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0.297C5.373 0.297 0 5.67 0 12.297c0 5.292 3.438 9.776 8.205 11.366.6.111.82-.261.82-.579 0-.286-.01-1.04-.016-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.082-.729.082-.729 1.205.084 1.838 1.237 1.838 1.237 1.07 1.835 2.809 1.305 3.495.998.108-.775.418-1.305.762-1.605-2.665-.303-5.466-1.332-5.466-5.931 0-1.31.467-2.381 1.235-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.654 1.653.243 2.873.12 3.176.77.84 1.233 1.911 1.233 3.221 0 4.609-2.807 5.625-5.479 5.921.429.369.813 1.096.813 2.209 0 1.595-.014 2.884-.014 3.273 0 .321.216.694.825.576C20.565 22.07 24 17.586 24 12.297c0-6.627-5.373-12-12-12"/>
+                </svg>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/kripashwar-dhungana/" target="_blank" aria-label="LinkedIn">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M22.23 0H1.77C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.77 24h20.46c.978 0 1.77-.774 1.77-1.729V1.729C24 .774 23.208 0 22.23 0zM7.09 20.452H3.545V9h3.545v11.452zM5.318 7.545a2.056 2.056 0 1 1 0-4.112 2.056 2.056 0 0 1 0 4.112zM20.452 20.452h-3.545v-5.568c0-1.328-.026-3.036-1.849-3.036-1.849 0-2.133 1.446-2.133 2.938v5.666h-3.545V9h3.408v1.561h.048c.474-.899 1.637-1.849 3.368-1.849 3.6 0 4.264 2.369 4.264 5.456v6.284z"/>
+                </svg>
+            </a>
         </div>
-    </section>
 
-    <!-- Experience -->
-    <section id="experience">
-        <h2 class="title">Experience</h2>
-        <div class="timeline">
-            <div class="titem">
-                <h3>Founder & Lead Engineer – Indoor Cricket Startup</h3>
-                <p class="muted">2024 — Present · Kathmandu</p>
-                <p>Built a part-time coach platform, training planner, and student progress tracking.</p>
-            </div>
-            <div class="titem">
-                <h3>Senior Software Engineer – Fintech</h3>
-                <p class="muted">2021 — 2024</p>
-                <p>Designed multi-queue payment flows (ISO, Fonepay) with reconciliation and retries.</p>
-            </div>
-            <div class="titem">
-                <h3>Software Engineer</h3>
-                <p class="muted">2018 — 2021</p>
-                <p>Delivered reporting services, PDF statement generators, and analytics pipelines.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills">
-        <h2 class="title">Skills</h2>
-        <div class="grid grid-3">
-            <div class="card center">
-                <div>
-                    <h3>Backend</h3>
-                    <p class="muted">Java, Spring, JPA, SQL, Kafka</p>
-                </div>
-            </div>
-            <div class="card center">
-                <div>
-                    <h3>Architecture</h3>
-                    <p class="muted">DDD, CQRS, testing, observability</p>
-                </div>
-            </div>
-            <div class="card center">
-                <div>
-                    <h3>Other</h3>
-                    <p class="muted">Docker, CI/CD, Linux, Git</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog (static list as example) -->
-    <section id="blog">
-        <h2 class="title">Writing</h2>
-        <div class="grid">
-            <article class="card">
-                <h3>Designing timeouts & reconciliation in payment systems</h3>
-                <p class="muted">A blueprint for simplifying complex message flows.</p>
-                <p><a href="#">Read post →</a></p>
-            </article>
-            <article class="card">
-                <h3>From PDFBox chaos to clean PDF patterns</h3>
-                <p class="muted">Refactoring a PDF generator into reusable components.</p>
-                <p><a href="#">Read post →</a></p>
-            </article>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-        <h2 class="title">Contact</h2>
-        <p class="muted">Want to collaborate or hire me? Send a message — I’ll reply within 24 hours.</p>
-        <!-- Example wired to Formspree (replace action with your endpoint) -->
-        <form class="grid grid-2" action="https://formspree.io/f/yourFormId" method="POST">
-            <div class="card">
-                <label for="name">Name</label>
-                <input class="input" id="name" name="name" placeholder="Your name" required />
-            </div>
-            <div class="card">
-                <label for="email">Email</label>
-                <input class="input" id="email" type="email" name="email" placeholder="you@example.com" required />
-            </div>
-            <div class="card" style="grid-column: 1/-1;">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" placeholder="How can I help?" required></textarea>
-            </div>
-            <div style="grid-column: 1/-1; display:flex; justify-content:flex-end;">
-                <button class="btn" type="submit">Send Message</button>
-            </div>
-        </form>
-    </section>
-</main>
-
-<footer>
-    <div class="container">
-        <p>© <span id="year"></span> Kripashwar Dhungana. All rights reserved.</p>
-        <p class="muted">Built with plain HTML/CSS/JS. Deployed on your favorite static host.</p>
+        <div class="scroll-hint">↓</div>
     </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section reveal">
+    <h2>About Me</h2>
+    <div class="about-grid">
+        <div class="profile" style="background-image: url('profile.png');"></div>
+        <div class="about-text">
+            <p><strong>Kripashwar Dhungana</strong> — I am an experienced Software Engineer with over six and half years of expertise in software development, specializing in Java technologies.
+                Adept in working in dynamic environments, where adaptability, collaboration, and effective problem-solving are key.
+                Proven track record in delivering high-quality software solutions and mentoring junior developers.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section reveal">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+        <div class="skill glass">💻 Java</div>
+        <div class="skill glass">⚡ Spring Boot</div>
+        <div class="skill glass">🌐 HTML · CSS · JS</div>
+        <div class="skill glass">📱 Angular</div>
+        <div class="skill glass">☁️ Cloud & APIs</div>
+        <div class="skill glass">🗄️ Databases</div>
+    </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section">
+    <h2>Experience</h2>
+    <div class="timeline">
+        <div class="timeline-item reveal-left">
+            <span class="timeline-date">Nov 2024 – Present</span>
+            <h3>Senior Software Engineer @ Foneloan Pvt. Ltd, Kathmandu, Nepal</h3>
+            <li>Spearheading the development of a fintech application based on microservices architecture and Java (versions 8, 17, 21).</li>
+            <li>Leading the resolution of production issues and developing new features.</li>
+            <li>Mentoring junior resources and conducting interviews.</li>
+        </div>
+
+        <div class="timeline-item reveal-left">
+            <span class="timeline-date">July 2021 – Nov 2024</span>
+            <h3>Senior Software Engineer @ Cedargate Technologies, Kathmandu, Nepal</h3>
+            <li>Led a team for over two years, managing sprint planning, task prioritization, and providing technical support.</li>
+            <li>Coordinated technical decision-making and conducted code reviews.</li>
+            <li>Collaborated with management and cross-functional teams.</li>
+            <li>Projects: Healthcare Benefits Analytics, Value-based Care Analytics.</li>
+            <li>Technologies: Java, AWS, Angular, MySQL.</li>
+        </div>
+
+        <div class="timeline-item reveal-right">
+            <span class="timeline-date">Apr 2019 – Jun 2021</span>
+            <h3>Software Engineer @ F1Soft International, Kathmandu (Nepal)</h3>
+            <li>Responsibilities: Developing secure payment systems.</li>
+            <li>Technologies: Java EE, Spring Boot, Angular.</li>
+            <li>Projects: FoneLoan, MyPay(former smartcardnepal).</li>
+        </div>
+
+        <div class="timeline-item reveal-left">
+            <span class="timeline-date">Dec 2018 – Apr 2019</span>
+            <h3>Java Developer @ Nyatapol Technologies, Kathmandu (Nepal)</h3>
+            <li>Responsibilities: Developing web applications.</li>
+            <li>Technologies: Core Java, Html, CSS, JavaScript, Bootstrap.</li>
+            <li> Projects: Employee management system of Sunrise Bank Limited and Global Bank etc.</li>
+        </div>
+    </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="section reveal">
+    <h2>Education</h2>
+    <div class="timeline">
+        <div class="timeline-item reveal-left">
+            <span class="timeline-date">2013</span>
+            <h3>B.E. in Computer Engineering</h3>
+            <p>Khwopa Engineering College, Bhaktapur, Nepal</p>
+        </div>
+
+        <div class="timeline-item reveal-right">
+            <span class="timeline-date">2011</span>
+            <h3>High School</h3>
+            <p>Golden Future Higher Secondary School, Panchkhal, Kavrepalanchwok</p>
+        </div>
+
+        <div class="timeline-item reveal-right">
+            <span class="timeline-date">2000</span>
+            <h3>School Level</h3>
+            <p>Janata Higher Secondary School, Panchkhal, Kavrepalanchwok</p>
+        </div>
+    </div>
+</section>
+
+<!--&lt;!&ndash; BLOG &ndash;&gt;-->
+<!--<section id="blog" class="section reveal">-->
+<!--    <h2>Blog</h2>-->
+<!--    <div class="blog-grid">-->
+<!--        <article class="blog-card glass">-->
+<!--            <h3>SOLID Principles: Writing Cleaner and Easier-to-Manage Code</h3>-->
+<!--            <p class="summary">If you’ve ever written code, you know how messy it can get as projects grow.-->
+<!--                Functions get mixed up, classes do too many things, and adding new features often breaks something old.-->
+<!--                That’s where SOLID principles come in.-->
+<!--                SOLID is a set of five rules that help programmers write clean, flexible, and maintainable code. Let’s go through them one by one.</p>-->
+<!--            <div class="full-content">-->
+<!--                <p>Full blog content goes here. Explain SOLID principles: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion with examples and tips.</p>-->
+<!--            </div>-->
+<!--            <button class="read-more">Read →</button>-->
+<!--        </article>-->
+
+<!--        <article class="blog-card glass">-->
+<!--            <h3>Top 5 Clean Code Tips</h3>-->
+<!--            <p class="summary">Practical advice to keep your codebase maintainable and readable.</p>-->
+<!--            <div class="full-content">-->
+<!--                <p>Full content for clean code tips: meaningful names, small functions, avoid duplication, proper formatting, and code reviews.</p>-->
+<!--            </div>-->
+<!--            <button class="read-more">Read →</button>-->
+<!--        </article>-->
+
+<!--        <article class="blog-card glass">-->
+<!--            <h3>Hosting a personal site on GitHub Pages</h3>-->
+<!--            <p class="summary">Step-by-step guide including DNS for .np domains.</p>-->
+<!--            <div class="full-content">-->
+<!--                <p>Full content for hosting guide: create GitHub repo, push HTML/CSS, configure DNS with Cloudflare, wait for propagation, and verify live site.</p>-->
+<!--            </div>-->
+<!--            <button class="read-more">Read →</button>-->
+<!--        </article>-->
+<!--    </div>-->
+<!--</section>-->
+
+
+<!-- CONTACT -->
+<section id="contact" class="section reveal">
+    <h2>Contact</h2>
+    <div class="contact-card glass">
+        <p>If you'd like to work together or ask a question — email me at</p>
+        <p><a href="mailto:dhungana1111@gmail.com" class="mailto">dhungana1111@gmail.com</a></p>
+        <div class="socials small">
+            <a href="https://github.com/kripashwar700312" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/kripashwar-dhungana/" aria-label="LinkedIn">LinkedIn</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-links">
+        <a href="#about">About</a> ·
+        <a href="#skills">Skills</a> ·
+        <a href="#experience">Experience</a> ·
+        <a href="#education">Education</a> ·
+<!--        <a href="#blog">Blog</a> ·-->
+        <a href="#contact">Contact</a>
+    </div>
+    <p>© 2025 Kripashwar</p>
 </footer>
-
-<script>
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Mobile menu
-    const menuBtn = document.getElementById('menuBtn');
-    const closeBtn = document.getElementById('closeMenu');
-    const panel = document.getElementById('mobileMenu');
-    function closeMenu(){
-      panel.classList.remove('active');
-      menuBtn.setAttribute('aria-expanded','false');
-    }
-    menuBtn?.addEventListener('click', () => {
-      panel.classList.add('active');
-      menuBtn.setAttribute('aria-expanded','true');
-    });
-    closeBtn?.addEventListener('click', closeMenu);
-    panel?.addEventListener('click', (e) => { if(e.target === panel) closeMenu(); });
-
-    // Theme toggle (dark by default with simple switch to light)
-    const themeToggle = document.getElementById('themeToggle');
-    const LIGHT = {
-      '--bg': '#f6f7fb', '--surface':'#ffffff', '--text':'#0b1020', '--muted':'#475569', '--card':'#ffffff', '--shadow':'0 10px 30px rgba(0,0,0,.08)'
-    };
-    const DARK = {
-      '--bg': '#0b1020', '--surface':'#111833', '--text':'#e6eaf2', '--muted':'#9aa3b2', '--card':'#0f172a', '--shadow':'0 10px 30px rgba(0,0,0,.35)'
-    };
-    function applyTheme(theme){
-      Object.entries(theme).forEach(([k,v]) => document.documentElement.style.setProperty(k,v));
-    }
-    function loadTheme(){
-      const t = localStorage.getItem('theme') || 'dark';
-      if(t==='light'){ applyTheme(LIGHT); themeToggle.textContent='☀️'; }
-      else { applyTheme(DARK); themeToggle.textContent='🌙'; }
-    }
-    loadTheme();
-    themeToggle?.addEventListener('click', () => {
-      const current = localStorage.getItem('theme') || 'dark';
-      const next = current === 'dark' ? 'light' : 'dark';
-      localStorage.setItem('theme', next);
-      loadTheme();
-    });
-
-    // Simple client-side form guard (prevents spaces-only input for name & message)
-    const nameInput = document.getElementById('name');
-    const messageInput = document.getElementById('message');
-    function notOnlySpaces(v){ return /^(?!\s*$).+/.test(v); }
-    document.querySelector('form')?.addEventListener('submit', (e) => {
-      if(!notOnlySpaces(nameInput.value) || !notOnlySpaces(messageInput.value)){
-        e.preventDefault();
-        alert('Please fill out all fields properly.');
-      }
-    });
-</script>
 </body>
 </html>
