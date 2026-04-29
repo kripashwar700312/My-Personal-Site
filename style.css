@@ -341,3 +341,26 @@ body.dark .profile{ border-color: rgba(90,124,255,0.14); }
 /*}*/
 
 /*.blog-card .read-more:hover { background: #005f87; }*/
+
+
+.experience-kpi {
+    margin: 15px 0 30px;
+    padding: 18px 22px;
+    border-radius: 16px;
+    display: inline-block;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.kpi-label {
+    font-size: 0.75rem;
+    opacity: 0.6;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.kpi-value {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
