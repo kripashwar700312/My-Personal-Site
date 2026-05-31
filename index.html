@@ -1,241 +1,333 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Kripashwar — Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kripashwar Dhungana | Portfolio</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-pO9V5oU+8I1gXBr4mPzB0v4c2Vjv3I3pVQ9e8+5wM0OZkE+rXx2kvv0y6vRG4kvLy7yQRe9Tgk0Q8p1Tz5ue3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Custom JS -->
     <script src="script.js" defer></script>
 </head>
-<body>
-<!-- NAVBAR -->
-<header>
-    <nav id="navbar">
-        <div class="nav-left">
-            <div class="logo">Kripashwar Dhungana</div>
+<body class="antialiased">
+
+<!-- Decorative Orbs -->
+<div class="fixed inset-0 overflow-hidden pointer-events-none">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+</div>
+
+<!-- Navigation -->
+<nav class="fixed w-full z-50 glass-nav">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+            <a href="#" class="text-2xl font-bold font-display tracking-tight text-white flex items-center gap-2">
+                <span class="w-8 h-8 rounded-full bg-gradient-to-tr from-cyan-400 to-blue-600 flex items-center justify-center text-sm font-black text-white shadow-[0_0_15px_rgba(6,182,212,0.5)]">KD</span>
+                Kripashwar
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold tracking-wide items-center">
+                <a href="#about" class="text-gray-400 hover:text-cyan-400 transition-colors">About</a>
+                <a href="#skills" class="text-gray-400 hover:text-cyan-400 transition-colors">Skills</a>
+                <a href="#experience" class="text-gray-400 hover:text-cyan-400 transition-colors">Experience</a>
+                <a href="#education" class="text-gray-400 hover:text-cyan-400 transition-colors">Education</a>
+                <a href="#contact" class="px-5 py-2 rounded-full border border-cyan-400/50 text-cyan-400 hover:bg-cyan-400 hover:text-gray-900 transition-all">Contact</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main class="relative z-10 pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto space-y-32">
+
+    <!-- Hero Section -->
+    <section class="min-h-[75vh] flex items-center justify-center pt-10">
+        <div class="glass-panel p-10 md:p-20 rounded-[3rem] w-full max-w-4xl text-center relative overflow-hidden">
+            <div class="absolute -top-[50%] -left-[50%] w-[200%] h-[200%] bg-gradient-to-br from-white/5 to-transparent rotate-45 pointer-events-none"></div>
+
+            <div class="avatar-ring mb-8">
+                <div class="w-24 h-24 rounded-full bg-slate-800 border-2 border-slate-700 flex items-center justify-center text-3xl font-black text-gray-400 bg-cover bg-center" style="background-image: url('profile.png');">
+                    <!-- Leave 'KD' here as a fallback if the image fails to load -->
+                    <span class="opacity-0">KD</span>
+                </div>
+            </div>
+
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-cyan-400/30 bg-cyan-400/10 text-cyan-300 text-sm font-semibold mb-6">
+                <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                Senior Software Engineer
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-tight">
+                Architecting robust <br />
+                <span class="text-gradient">Java solutions.</span>
+            </h1>
+
+            <p class="text-lg md:text-xl mb-10 text-gray-400 font-light max-w-2xl mx-auto">
+                Transforming complex business requirements into seamless, scalable microservices.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-5">
+                <a href="resume.pdf" download class="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full font-bold hover:shadow-[0_0_30px_rgba(6,182,212,0.6)] transition-all transform hover:-translate-y-1">
+                    <i class="fas fa-file-download mr-2"></i> Download Resume
+                </a>
+                <a href="https://github.com/kripashwar700312" target="_blank" class="px-8 py-4 rounded-full font-bold text-white border border-white/20 hover:bg-white/10 transition-all transform hover:-translate-y-1">
+                    <i class="fab fa-github mr-2"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="scroll-mt-32 relative">
+        <div class="glass-panel p-10 md:p-14 rounded-[3rem] flex flex-col md:flex-row items-center gap-10">
+            <div class="flex-1">
+                <h2 class="text-4xl font-bold mb-6 font-display">About Me</h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-full mb-8"></div>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    I am an experienced Software Engineer with <span id="dynamic-about-exp">over six and a half years</span> of expertise in software development, specializing in Java technologies. Adept in working in dynamic environments, where adaptability, collaboration, and effective problem-solving are key. I have a proven track record in delivering high-quality software solutions and mentoring junior developers to elevate the entire engineering team.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="scroll-mt-32 relative">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4 font-display">Technical Arsenal</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-600 mx-auto rounded-full"></div>
         </div>
 
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#education">Education</a></li>
-<!--            <li><a href="#blog">Blog</a></li>-->
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-
-        <div class="nav-right">
-            <button id="mode-toggle" aria-label="Toggle theme">🌙</button>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Skill 1 -->
+            <div class="glass-panel p-6 rounded-3xl text-center group">
+                <div class="w-14 h-14 mx-auto bg-slate-800/50 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 border border-white/5">
+                    <i class="fab fa-java text-3xl text-cyan-400"></i>
+                </div>
+                <h3 class="font-bold text-lg text-white">Java</h3>
+                <p class="text-xs text-gray-400 mt-1">v8, 17, 21</p>
+            </div>
+            <!-- Skill 2 -->
+            <div class="glass-panel p-6 rounded-3xl text-center group">
+                <div class="w-14 h-14 mx-auto bg-slate-800/50 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 border border-white/5">
+                    <i class="fas fa-leaf text-3xl text-green-400"></i>
+                </div>
+                <h3 class="font-bold text-lg text-white">Spring Boot</h3>
+                <p class="text-xs text-gray-400 mt-1">Core Framework</p>
+            </div>
+            <!-- Skill 3 -->
+            <div class="glass-panel p-6 rounded-3xl text-center group">
+                <div class="w-14 h-14 mx-auto bg-slate-800/50 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 border border-white/5">
+                    <i class="fab fa-angular text-3xl text-red-500"></i>
+                </div>
+                <h3 class="font-bold text-lg text-white">Angular</h3>
+                <p class="text-xs text-gray-400 mt-1">Frontend UI</p>
+            </div>
+            <!-- Skill 4 -->
+            <div class="glass-panel p-6 rounded-3xl text-center group">
+                <div class="w-14 h-14 mx-auto bg-slate-800/50 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 border border-white/5">
+                    <i class="fab fa-html5 text-3xl text-orange-400"></i>
+                </div>
+                <h3 class="font-bold text-lg text-white">HTML/CSS/JS</h3>
+                <p class="text-xs text-gray-400 mt-1">Web Fundamentals</p>
+            </div>
+            <!-- Skill 5 -->
+            <div class="glass-panel p-6 rounded-3xl text-center group">
+                <div class="w-14 h-14 mx-auto bg-slate-800/50 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 border border-white/5">
+                    <i class="fas fa-cloud text-3xl text-blue-400"></i>
+                </div>
+                <h3 class="font-bold text-lg text-white">Cloud & APIs</h3>
+                <p class="text-xs text-gray-400 mt-1">AWS / REST</p>
+            </div>
+            <!-- Skill 6 -->
+            <div class="glass-panel p-6 rounded-3xl text-center group">
+                <div class="w-14 h-14 mx-auto bg-slate-800/50 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 border border-white/5">
+                    <i class="fas fa-database text-3xl text-yellow-400"></i>
+                </div>
+                <h3 class="font-bold text-lg text-white">Databases</h3>
+                <p class="text-xs text-gray-400 mt-1">SQL / MySQL</p>
+            </div>
+            <!-- Skill 7 -->
+            <div class="glass-panel p-6 rounded-3xl text-center group md:col-start-2 lg:col-auto">
+                <div class="w-14 h-14 mx-auto bg-slate-800/50 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 border border-white/5">
+                    <i class="fas fa-network-wired text-3xl text-purple-400"></i>
+                </div>
+                <h3 class="font-bold text-lg text-white">Microservices</h3>
+                <p class="text-xs text-gray-400 mt-1">Architecture</p>
+            </div>
         </div>
-    </nav>
-</header>
+    </section>
 
-<!-- HERO -->
-<section id="home" class="hero">
-    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <!-- Experience Section -->
+    <section id="experience" class="scroll-mt-32 relative">
+        <div class="text-center mb-10">
+            <h2 class="text-4xl font-bold mb-4 font-display">Professional Journey</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-600 mx-auto rounded-full mb-10"></div>
 
-    <div class="hero-inner">
-        <h1 class="hero-title">Hi, I’m <span class="name">Kripashwar Dhungana</span></h1>
-        <p class="hero-sub">I build <span id="typing" aria-live="polite"></span></p>
+            <!-- Live KPI Counter -->
+            <div class="glass-panel inline-block px-10 py-6 rounded-2xl border-cyan-400/40 shadow-[0_0_20px_rgba(6,182,212,0.15)]">
+                <p class="text-cyan-400 text-xs font-bold tracking-[0.15em] uppercase mb-2">Total Experience (Since Dec 2018)</p>
+                <div id="experience-counter" class="text-3xl font-black text-white drop-shadow-md">Loading...</div>
+            </div>
+        </div>
 
-        <div class="hero-ctas">
-            <a class="btn resume" href="resume.pdf" download>
-                <!-- File / Download Icon -->
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right:8px;">
-                    <path d="M12 16v-8m0 0l-4 4m4-4l4 4M4 20h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"/>
-                </svg>
-                Download Resume
+        <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-1 before:bg-gradient-to-b before:from-cyan-500 before:via-blue-500 before:to-transparent before:opacity-30 mt-16">
+
+            <!-- Job 1 -->
+            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-900 border-4 border-cyan-400 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 relative">
+                    <span class="absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-30 animate-ping"></span>
+                </div>
+                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] glass-panel p-8 rounded-3xl hover:border-cyan-400/50">
+                    <div class="flex flex-col xl:flex-row xl:justify-between xl:items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-1 font-display">Senior Software Engineer</h3>
+                            <h4 class="text-cyan-400 font-semibold"><i class="fas fa-building mr-2 text-sm"></i>Foneloan Pvt. Ltd</h4>
+                        </div>
+                        <span class="mt-3 xl:mt-0 px-3 py-1 bg-cyan-400/10 text-cyan-300 text-xs font-bold rounded-full border border-cyan-400/20 w-max">Nov 2024 - Present</span>
+                    </div>
+                    <ul class="text-gray-400 text-sm leading-relaxed list-disc list-inside space-y-2">
+                        <li>Spearheading the development of a fintech application based on microservices architecture and Java (v8, 17, 21).</li>
+                        <li>Leading the resolution of production issues and developing new features.</li>
+                        <li>Mentoring junior resources and conducting interviews.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Job 2 -->
+            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-900 border-4 border-blue-500 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10"></div>
+                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] glass-panel p-8 rounded-3xl hover:border-blue-500/50">
+                    <div class="flex flex-col xl:flex-row xl:justify-between xl:items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-1 font-display">Senior Software Engineer</h3>
+                            <h4 class="text-blue-400 font-semibold"><i class="fas fa-building mr-2 text-sm"></i>Cedargate Technologies</h4>
+                        </div>
+                        <span class="mt-3 xl:mt-0 px-3 py-1 bg-blue-500/10 text-blue-300 text-xs font-bold rounded-full border border-blue-500/20 w-max">Jul 2021 - Nov 2024</span>
+                    </div>
+                    <ul class="text-gray-400 text-sm leading-relaxed list-disc list-inside space-y-2">
+                        <li>Led a team for over two years, managing sprint planning, task prioritization, and providing technical support.</li>
+                        <li>Coordinated technical decision-making and conducted code reviews.</li>
+                        <li>Projects: Healthcare Benefits Analytics, Value-based Care Analytics.</li>
+                        <li>Technologies: Java, AWS, Angular, MySQL.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Job 3 -->
+            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-900 border-4 border-indigo-400 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10"></div>
+                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] glass-panel p-8 rounded-3xl hover:border-indigo-400/50">
+                    <div class="flex flex-col xl:flex-row xl:justify-between xl:items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-1 font-display">Software Engineer</h3>
+                            <h4 class="text-indigo-400 font-semibold"><i class="fas fa-building mr-2 text-sm"></i>F1Soft International</h4>
+                        </div>
+                        <span class="mt-3 xl:mt-0 px-3 py-1 bg-indigo-400/10 text-indigo-300 text-xs font-bold rounded-full border border-indigo-400/20 w-max">Apr 2019 - Jun 2021</span>
+                    </div>
+                    <ul class="text-gray-400 text-sm leading-relaxed list-disc list-inside space-y-2">
+                        <li>Developing secure payment systems utilizing Java EE, Spring Boot, and Angular.</li>
+                        <li>Projects: FoneLoan, MyPay (former smartcardnepal).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Job 4 -->
+            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-900 border-4 border-emerald-400 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10"></div>
+                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] glass-panel p-8 rounded-3xl hover:border-emerald-400/50">
+                    <div class="flex flex-col xl:flex-row xl:justify-between xl:items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-1 font-display">Java Developer</h3>
+                            <h4 class="text-emerald-400 font-semibold"><i class="fas fa-building mr-2 text-sm"></i>Nyatapol Technologies</h4>
+                        </div>
+                        <span class="mt-3 xl:mt-0 px-3 py-1 bg-emerald-400/10 text-emerald-300 text-xs font-bold rounded-full border border-emerald-400/20 w-max">Dec 2018 - Apr 2019</span>
+                    </div>
+                    <ul class="text-gray-400 text-sm leading-relaxed list-disc list-inside space-y-2">
+                        <li>Developing web applications using Core Java, HTML, CSS, JavaScript, and Bootstrap.</li>
+                        <li>Projects: Employee management system of Sunrise Bank Limited and Global Bank.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Education Grid -->
+    <section id="education" class="scroll-mt-32">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4 font-display">Education</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-600 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- Edu 1 -->
+            <div class="glass-panel p-8 rounded-3xl border-t-4 border-t-cyan-400 text-center">
+                <div class="w-12 h-12 mx-auto bg-cyan-400/10 rounded-xl flex items-center justify-center mb-4 border border-cyan-400/20">
+                    <i class="fas fa-graduation-cap text-xl text-cyan-400"></i>
+                </div>
+                <h3 class="font-bold text-lg text-white mb-2 font-display">B.E. in Computer Engineering</h3>
+                <p class="text-gray-400 text-sm mb-4">Khwopa Engineering College, Bhaktapur</p>
+                <span class="text-xs font-bold text-cyan-400 bg-cyan-400/10 px-3 py-1 rounded-full">2013</span>
+            </div>
+
+            <!-- Edu 2 -->
+            <div class="glass-panel p-8 rounded-3xl border-t-4 border-t-blue-500 text-center">
+                <div class="w-12 h-12 mx-auto bg-blue-500/10 rounded-xl flex items-center justify-center mb-4 border border-blue-500/20">
+                    <i class="fas fa-school text-xl text-blue-400"></i>
+                </div>
+                <h3 class="font-bold text-lg text-white mb-2 font-display">High School</h3>
+                <p class="text-gray-400 text-sm mb-4">Golden Future Higher Secondary School, Kavrepalanchwok</p>
+                <span class="text-xs font-bold text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full">2011</span>
+            </div>
+
+            <!-- Edu 3 -->
+            <div class="glass-panel p-8 rounded-3xl border-t-4 border-t-indigo-400 text-center">
+                <div class="w-12 h-12 mx-auto bg-indigo-400/10 rounded-xl flex items-center justify-center mb-4 border border-indigo-400/20">
+                    <i class="fas fa-book text-xl text-indigo-400"></i>
+                </div>
+                <h3 class="font-bold text-lg text-white mb-2 font-display">School Level</h3>
+                <p class="text-gray-400 text-sm mb-4">Janata Higher Secondary School, Panchkhal</p>
+                <span class="text-xs font-bold text-indigo-400 bg-indigo-400/10 px-3 py-1 rounded-full">2000</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Footer Section -->
+    <footer id="contact" class="pb-10">
+        <div class="glass-panel p-12 md:p-20 rounded-[3rem] text-center relative overflow-hidden">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-lg h-full bg-cyan-500/10 blur-[100px] pointer-events-none"></div>
+
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 font-display">Let's build something <span class="text-cyan-400 italic">great.</span></h2>
+            <p class="text-gray-400 mb-10 max-w-xl mx-auto text-lg">Currently open for new opportunities, collaborations, or a quick chat about software architecture.</p>
+
+            <a href="mailto:dhungana1111@gmail.com" class="inline-flex items-center justify-center px-10 py-5 text-xl font-bold text-slate-900 bg-white rounded-full hover:scale-105 transition-transform duration-300 shadow-[0_0_40px_rgba(255,255,255,0.2)] mb-12">
+                <i class="fas fa-paper-plane mr-3 text-cyan-500"></i> dhungana1111@gmail.com
             </a>
 
-            <a class="btn contact" href="#contact">
-                <!-- Envelope / Mail Icon -->
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right:8px;">
-                    <path d="M2 4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4zm2 0v.01M22 4v16M2 4l10 9 10-9"/>
-                </svg>
-                Contact Me
-            </a>
+            <div class="flex justify-center space-x-6 border-t border-white/10 pt-10">
+                <a href="https://github.com/kripashwar700312" target="_blank" class="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-cyan-400 hover:bg-white/10 hover:-translate-y-2 transition-all duration-300 text-2xl">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/kripashwar-dhungana/" target="_blank" class="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-blue-400 hover:bg-white/10 hover:-translate-y-2 transition-all duration-300 text-2xl">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+            <p class="mt-12 text-sm text-gray-500 font-medium tracking-wider">
+                © 2025 KRIPASHWAR DHUNGANA.
+            </p>
         </div>
+    </footer>
 
-        <div class="hero-socials">
-            <!-- GitHub -->
-            <a href="https://github.com/kripashwar700312" target="_blank" aria-label="GitHub">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0.297C5.373 0.297 0 5.67 0 12.297c0 5.292 3.438 9.776 8.205 11.366.6.111.82-.261.82-.579 0-.286-.01-1.04-.016-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.082-.729.082-.729 1.205.084 1.838 1.237 1.838 1.237 1.07 1.835 2.809 1.305 3.495.998.108-.775.418-1.305.762-1.605-2.665-.303-5.466-1.332-5.466-5.931 0-1.31.467-2.381 1.235-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.654 1.653.243 2.873.12 3.176.77.84 1.233 1.911 1.233 3.221 0 4.609-2.807 5.625-5.479 5.921.429.369.813 1.096.813 2.209 0 1.595-.014 2.884-.014 3.273 0 .321.216.694.825.576C20.565 22.07 24 17.586 24 12.297c0-6.627-5.373-12-12-12"/>
-                </svg>
-            </a>
-
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/kripashwar-dhungana/" target="_blank" aria-label="LinkedIn">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M22.23 0H1.77C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.77 24h20.46c.978 0 1.77-.774 1.77-1.729V1.729C24 .774 23.208 0 22.23 0zM7.09 20.452H3.545V9h3.545v11.452zM5.318 7.545a2.056 2.056 0 1 1 0-4.112 2.056 2.056 0 0 1 0 4.112zM20.452 20.452h-3.545v-5.568c0-1.328-.026-3.036-1.849-3.036-1.849 0-2.133 1.446-2.133 2.938v5.666h-3.545V9h3.408v1.561h.048c.474-.899 1.637-1.849 3.368-1.849 3.6 0 4.264 2.369 4.264 5.456v6.284z"/>
-                </svg>
-            </a>
-        </div>
-
-        <div class="scroll-hint">↓</div>
-    </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="section reveal">
-    <h2>About Me</h2>
-    <div class="about-grid">
-        <div class="profile" style="background-image: url('profile.png');"></div>
-        <div class="about-text">
-            <p><strong>Kripashwar Dhungana</strong> — I am an experienced Software Engineer with over six and half years of expertise in software development, specializing in Java technologies.
-                Adept in working in dynamic environments, where adaptability, collaboration, and effective problem-solving are key.
-                Proven track record in delivering high-quality software solutions and mentoring junior developers.</p>
-        </div>
-    </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills" class="section reveal">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-        <div class="skill glass">💻 Java</div>
-        <div class="skill glass">⚡ Spring Boot</div>
-        <div class="skill glass">🌐 HTML · CSS · JS</div>
-        <div class="skill glass">📱 Angular</div>
-        <div class="skill glass">☁️ Cloud & APIs</div>
-        <div class="skill glass">🗄️ Databases</div>
-    </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience" class="section">
-    <h2>Experience</h2>
-
-    <div class="experience-kpi glass">
-        <div class="kpi-label">Total Experience (since 2018-12-16)</div>
-        <div class="kpi-value" id="experience-counter">0</div>
-    </div>
-
-    <div class="timeline">
-        <div class="timeline-item reveal-left">
-            <span class="timeline-date">Nov 2024 – Present</span>
-            <h3>Senior Software Engineer @ <a href="https://foneloan.com.np/" target="_blank">Foneloan Pvt. Ltd</a>, Kathmandu, Nepal</h3>
-            <li>Spearheading the development of a fintech application based on microservices architecture and Java (versions 8, 17, 21).</li>
-            <li>Leading the resolution of production issues and developing new features.</li>
-            <li>Mentoring junior resources and conducting interviews.</li>
-        </div>
-
-        <div class="timeline-item reveal-left">
-            <span class="timeline-date">July 2021 – Nov 2024</span>
-            <h3>Senior Software Engineer @ <a href="https://www.cedargate.com/" target="_blank">Cedargate Technologies</a>, Kathmandu, Nepal</h3>
-            <li>Led a team for over two years, managing sprint planning, task prioritization, and providing technical support.</li>
-            <li>Coordinated technical decision-making and conducted code reviews.</li>
-            <li>Collaborated with management and cross-functional teams.</li>
-            <li>Projects: <a href="https://www.cedargate.com/platform/analytics/healthcare-benefits-analytics/" target="_blank">Healthcare Benefits Analytics</a>, <a href="https://www.cedargate.com/platform/analytics/value-based-care-analytics/" target="_blank">Value-based Care Analytics</a>.</li>
-            <li>Technologies: Java, AWS, Angular, MySQL.</li>
-        </div>
-
-        <div class="timeline-item reveal-right">
-            <span class="timeline-date">Apr 2019 – Jun 2021</span>
-            <h3>Software Engineer @ <a href="https://f1soft.com/" target="_blank">F1Soft International</a>, Kathmandu (Nepal)</h3>
-            <li>Responsibilities: Developing secure payment systems.</li>
-            <li>Technologies: Java EE, Spring Boot, Angular.</li>
-            <li>Projects: <a href="https://foneloan.com.np/" target="_blank">FoneLoan</a>, <a href="http://mypay.com.np/" target="_blank">MyPay</a>(former smartcardnepal).</li>
-        </div>
-
-        <div class="timeline-item reveal-left">
-            <span class="timeline-date">Dec 2018 – Apr 2019</span>
-            <h3>Java Developer @ Nyatapol Technologies, Kathmandu (Nepal)</h3>
-            <li>Responsibilities: Developing web applications.</li>
-            <li>Technologies: Core Java, Html, CSS, JavaScript, Bootstrap.</li>
-            <li> Projects: Employee management system of Sunrise Bank Limited and Global Bank etc.</li>
-        </div>
-    </div>
-</section>
-
-<!-- EDUCATION -->
-<section id="education" class="section reveal">
-    <h2>Education</h2>
-    <div class="timeline">
-        <div class="timeline-item reveal-left">
-            <span class="timeline-date">2013</span>
-            <h3>B.E. in Computer Engineering</h3>
-            <p>Khwopa Engineering College, Bhaktapur, Nepal</p>
-        </div>
-
-        <div class="timeline-item reveal-right">
-            <span class="timeline-date">2011</span>
-            <h3>High School</h3>
-            <p>Golden Future Higher Secondary School, Panchkhal, Kavrepalanchwok</p>
-        </div>
-
-        <div class="timeline-item reveal-right">
-            <span class="timeline-date">2000</span>
-            <h3>School Level</h3>
-            <p>Janata Higher Secondary School, Panchkhal, Kavrepalanchwok</p>
-        </div>
-    </div>
-</section>
-
-<!--&lt;!&ndash; BLOG &ndash;&gt;-->
-<!--<section id="blog" class="section reveal">-->
-<!--    <h2>Blog</h2>-->
-<!--    <div class="blog-grid">-->
-<!--        <article class="blog-card glass">-->
-<!--            <h3>SOLID Principles: Writing Cleaner and Easier-to-Manage Code</h3>-->
-<!--            <p class="summary">If you’ve ever written code, you know how messy it can get as projects grow.-->
-<!--                Functions get mixed up, classes do too many things, and adding new features often breaks something old.-->
-<!--                That’s where SOLID principles come in.-->
-<!--                SOLID is a set of five rules that help programmers write clean, flexible, and maintainable code. Let’s go through them one by one.</p>-->
-<!--            <div class="full-content">-->
-<!--                <p>Full blog content goes here. Explain SOLID principles: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion with examples and tips.</p>-->
-<!--            </div>-->
-<!--            <button class="read-more">Read →</button>-->
-<!--        </article>-->
-
-<!--        <article class="blog-card glass">-->
-<!--            <h3>Top 5 Clean Code Tips</h3>-->
-<!--            <p class="summary">Practical advice to keep your codebase maintainable and readable.</p>-->
-<!--            <div class="full-content">-->
-<!--                <p>Full content for clean code tips: meaningful names, small functions, avoid duplication, proper formatting, and code reviews.</p>-->
-<!--            </div>-->
-<!--            <button class="read-more">Read →</button>-->
-<!--        </article>-->
-
-<!--        <article class="blog-card glass">-->
-<!--            <h3>Hosting a personal site on GitHub Pages</h3>-->
-<!--            <p class="summary">Step-by-step guide including DNS for .np domains.</p>-->
-<!--            <div class="full-content">-->
-<!--                <p>Full content for hosting guide: create GitHub repo, push HTML/CSS, configure DNS with Cloudflare, wait for propagation, and verify live site.</p>-->
-<!--            </div>-->
-<!--            <button class="read-more">Read →</button>-->
-<!--        </article>-->
-<!--    </div>-->
-<!--</section>-->
-
-
-<!-- CONTACT -->
-<section id="contact" class="section reveal">
-    <h2>Contact</h2>
-    <div class="contact-card glass">
-        <p>If you'd like to work together or ask a question — email me at</p>
-        <p><a href="mailto:dhungana1111@gmail.com" class="mailto">dhungana1111@gmail.com</a></p>
-        <div class="socials small">
-            <a href="https://github.com/kripashwar700312" aria-label="GitHub">GitHub</a>
-            <a href="https://www.linkedin.com/in/kripashwar-dhungana/" aria-label="LinkedIn">LinkedIn</a>
-        </div>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="site-footer">
-    <div class="footer-links">
-        <a href="#about">About</a> ·
-        <a href="#skills">Skills</a> ·
-        <a href="#experience">Experience</a> ·
-        <a href="#education">Education</a> ·
-<!--        <a href="#blog">Blog</a> ·-->
-        <a href="#contact">Contact</a>
-    </div>
-    <p>© 2025 Kripashwar</p>
-</footer>
+</main>
 </body>
 </html>
