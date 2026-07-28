@@ -1,333 +1,452 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kripashwar Dhungana | Portfolio</title>
+    <title>Kripashwar Dhungana — Senior Software Engineer</title>
+    <meta name="description" content="Kripashwar Dhungana — Senior Software Engineer specialising in Java, Spring Boot and microservice architecture. Building scalable fintech and healthcare platforms.">
+    <meta name="theme-color" content="#05070d">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kripashwar Dhungana — Senior Software Engineer">
+    <meta property="og:description" content="Architecting robust Java systems. Microservices, Spring Boot, Angular, AWS.">
+    <meta property="og:image" content="profile.png">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2305070d'/><text y='68' x='50' text-anchor='middle' font-size='52' font-family='sans-serif' font-weight='bold' fill='%2322d3ee'>KD</text></svg>">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- Custom JS -->
     <script src="script.js" defer></script>
 </head>
-<body class="antialiased">
+<body>
 
-<!-- Decorative Orbs -->
-<div class="fixed inset-0 overflow-hidden pointer-events-none">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ══ Icon sprite ══ -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></symbol>
+    <symbol id="i-arrow-ur" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+    <symbol id="i-java" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16"/><path d="M15 21V11h2a2 2 0 0 1 2 2v8"/><line x1="9" y1="7" x2="11" y2="7"/><line x1="9" y1="11" x2="11" y2="11"/><line x1="9" y1="15" x2="11" y2="15"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="17" x2="21" y2="17"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></symbol>
+</svg>
+
+<!-- ══ Ambient background ══ -->
+<div class="bg-layer" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="aurora aurora-1"></div>
+    <div class="aurora aurora-2"></div>
+    <div class="aurora aurora-3"></div>
+    <div class="bg-noise"></div>
+    <div class="bg-vignette"></div>
 </div>
 
-<!-- Navigation -->
-<nav class="fixed w-full z-50 glass-nav">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-20">
-            <a href="#" class="text-2xl font-bold font-display tracking-tight text-white flex items-center gap-2">
-                <span class="w-8 h-8 rounded-full bg-gradient-to-tr from-cyan-400 to-blue-600 flex items-center justify-center text-sm font-black text-white shadow-[0_0_15px_rgba(6,182,212,0.5)]">KD</span>
-                Kripashwar
-            </a>
-            <div class="hidden md:flex space-x-8 text-sm font-semibold tracking-wide items-center">
-                <a href="#about" class="text-gray-400 hover:text-cyan-400 transition-colors">About</a>
-                <a href="#skills" class="text-gray-400 hover:text-cyan-400 transition-colors">Skills</a>
-                <a href="#experience" class="text-gray-400 hover:text-cyan-400 transition-colors">Experience</a>
-                <a href="#education" class="text-gray-400 hover:text-cyan-400 transition-colors">Education</a>
-                <a href="#contact" class="px-5 py-2 rounded-full border border-cyan-400/50 text-cyan-400 hover:bg-cyan-400 hover:text-gray-900 transition-all">Contact</a>
+<div class="scroll-progress" aria-hidden="true"><span id="scrollBar"></span></div>
+
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+
+<!-- ══ Navigation ══ -->
+<header class="nav-wrap">
+    <nav class="nav" aria-label="Primary">
+        <a href="#" class="brand" aria-label="Kripashwar Dhungana — home">
+            <span class="brand-mark">KD</span>
+            <span class="brand-text">Kripashwar</span>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about" data-nav>About</a></li>
+            <li><a href="#skills" data-nav>Skills</a></li>
+            <li><a href="#experience" data-nav>Experience</a></li>
+            <li><a href="#education" data-nav>Education</a></li>
+            <li><span class="nav-pill" aria-hidden="true"></span></li>
+        </ul>
+
+        <div class="nav-actions">
+            <a href="#contact" class="btn btn-ghost btn-sm" data-magnetic>Get in touch</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+                <svg class="icon"><use href="#i-menu"/></svg>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" hidden>
+    <button class="mobile-close" id="navClose" aria-label="Close menu"><svg class="icon"><use href="#i-close"/></svg></button>
+    <nav aria-label="Mobile">
+        <a href="#about"><span>01</span> About</a>
+        <a href="#skills"><span>02</span> Skills</a>
+        <a href="#experience"><span>03</span> Experience</a>
+        <a href="#education"><span>04</span> Education</a>
+        <a href="#contact"><span>05</span> Contact</a>
+    </nav>
+</div>
+
+<main id="main">
+
+    <!-- ══ Hero ══ -->
+    <section class="hero">
+        <div class="shell">
+            <div class="hero-inner">
+                <div class="status" data-reveal>
+                    <span class="status-dot"></span>
+                    Available for new opportunities
+                </div>
+
+                <h1 class="hero-title">
+                    <span class="line" data-split>Architecting robust</span>
+                    <span class="line" data-split><em class="grad">Java systems</em></span>
+                    <span class="line" data-split>that scale.</span>
+                </h1>
+
+                <p class="hero-sub" data-reveal data-delay="120">
+                    Senior Software Engineer turning complex business requirements into
+                    seamless, resilient microservices — for fintech and healthcare at scale.
+                </p>
+
+                <div class="hero-cta" data-reveal data-delay="200">
+                    <a href="resume.pdf" download class="btn btn-primary" data-magnetic>
+                        <svg class="icon"><use href="#i-download"/></svg>
+                        Download Resume
+                    </a>
+                    <a href="https://github.com/kripashwar700312" target="_blank" rel="noopener" class="btn btn-ghost" data-magnetic>
+                        <svg class="icon"><use href="#i-github"/></svg>
+                        GitHub
+                    </a>
+                </div>
+
+                <div class="hero-stats" data-reveal data-delay="300">
+                    <div class="stat">
+                        <span class="stat-num" data-count="6" data-suffix="+">0</span>
+                        <span class="stat-label">Years shipping</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num" data-count="4">0</span>
+                        <span class="stat-label">Companies</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num" data-count="2" data-suffix="+ yrs">0</span>
+                        <span class="stat-label">Leading teams</span>
+                    </div>
+                </div>
             </div>
+
+            <div class="hero-portrait" data-reveal data-delay="160">
+                <div class="portrait-frame" data-tilt>
+                    <div class="portrait-glow"></div>
+                    <img src="profile.png" alt="Portrait of Kripashwar Dhungana" width="420" height="420" loading="eager" decoding="async">
+                    <div class="portrait-badge">
+                        <svg class="icon"><use href="#i-code"/></svg>
+                        <div>
+                            <strong>Senior Software Engineer</strong>
+                            <small>Foneloan Pvt. Ltd</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-hint" aria-hidden="true">
+            <span class="scroll-hint-line"></span>
+            Scroll
+        </div>
+    </section>
+
+    <!-- ══ Marquee ══ -->
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+            <span>Java</span><i>✦</i><span>Spring Boot</span><i>✦</i><span>Microservices</span><i>✦</i>
+            <span>Angular</span><i>✦</i><span>AWS</span><i>✦</i><span>REST APIs</span><i>✦</i>
+            <span>MySQL</span><i>✦</i><span>Kafka</span><i>✦</i><span>Docker</span><i>✦</i>
+            <span>Java</span><i>✦</i><span>Spring Boot</span><i>✦</i><span>Microservices</span><i>✦</i>
+            <span>Angular</span><i>✦</i><span>AWS</span><i>✦</i><span>REST APIs</span><i>✦</i>
+            <span>MySQL</span><i>✦</i><span>Kafka</span><i>✦</i><span>Docker</span><i>✦</i>
         </div>
     </div>
-</nav>
 
-<main class="relative z-10 pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto space-y-32">
-
-    <!-- Hero Section -->
-    <section class="min-h-[75vh] flex items-center justify-center pt-10">
-        <div class="glass-panel p-10 md:p-20 rounded-[3rem] w-full max-w-4xl text-center relative overflow-hidden">
-            <div class="absolute -top-[50%] -left-[50%] w-[200%] h-[200%] bg-gradient-to-br from-white/5 to-transparent rotate-45 pointer-events-none"></div>
-
-            <div class="avatar-ring mb-8">
-                <div class="w-24 h-24 rounded-full bg-slate-800 border-2 border-slate-700 flex items-center justify-center text-3xl font-black text-gray-400 bg-cover bg-center" style="background-image: url('profile.png');">
-                    <!-- Leave 'KD' here as a fallback if the image fails to load -->
-                    <span class="opacity-0">KD</span>
+    <!-- ══ About ══ -->
+    <section id="about" class="section">
+        <div class="shell">
+            <div class="about-grid">
+                <div class="section-head" data-reveal>
+                    <span class="eyebrow"><i></i>01 — About</span>
+                    <h2 class="section-title">Engineering with<br>intent.</h2>
                 </div>
-            </div>
 
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-cyan-400/30 bg-cyan-400/10 text-cyan-300 text-sm font-semibold mb-6">
-                <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-                Senior Software Engineer
-            </div>
+                <div class="about-body">
+                    <p class="lead" data-reveal data-delay="80">
+                        I'm an experienced Software Engineer with
+                        <span class="hl" id="dynamic-about-exp">over six and a half years</span>
+                        of expertise in software development, specialising in Java technologies.
+                    </p>
+                    <p data-reveal data-delay="140">
+                        I thrive in dynamic environments where adaptability, collaboration and effective
+                        problem-solving matter most. I have a proven track record of delivering high-quality
+                        software and mentoring junior developers to lift the whole engineering team.
+                    </p>
 
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-tight">
-                Architecting robust <br />
-                <span class="text-gradient">Java solutions.</span>
-            </h1>
-
-            <p class="text-lg md:text-xl mb-10 text-gray-400 font-light max-w-2xl mx-auto">
-                Transforming complex business requirements into seamless, scalable microservices.
-            </p>
-
-            <div class="flex flex-col sm:flex-row justify-center gap-5">
-                <a href="resume.pdf" download class="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full font-bold hover:shadow-[0_0_30px_rgba(6,182,212,0.6)] transition-all transform hover:-translate-y-1">
-                    <i class="fas fa-file-download mr-2"></i> Download Resume
-                </a>
-                <a href="https://github.com/kripashwar700312" target="_blank" class="px-8 py-4 rounded-full font-bold text-white border border-white/20 hover:bg-white/10 transition-all transform hover:-translate-y-1">
-                    <i class="fab fa-github mr-2"></i> GitHub
-                </a>
+                    <ul class="about-points">
+                        <li data-reveal data-delay="200"><svg class="icon"><use href="#i-check"/></svg> Microservice architecture from design to production</li>
+                        <li data-reveal data-delay="240"><svg class="icon"><use href="#i-check"/></svg> Production incident ownership &amp; root-cause analysis</li>
+                        <li data-reveal data-delay="280"><svg class="icon"><use href="#i-check"/></svg> Mentoring, code review and technical hiring</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="scroll-mt-32 relative">
-        <div class="glass-panel p-10 md:p-14 rounded-[3rem] flex flex-col md:flex-row items-center gap-10">
-            <div class="flex-1">
-                <h2 class="text-4xl font-bold mb-6 font-display">About Me</h2>
-                <div class="w-16 h-1 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-full mb-8"></div>
-                <p class="text-lg text-gray-300 leading-relaxed">
-                    I am an experienced Software Engineer with <span id="dynamic-about-exp">over six and a half years</span> of expertise in software development, specializing in Java technologies. Adept in working in dynamic environments, where adaptability, collaboration, and effective problem-solving are key. I have a proven track record in delivering high-quality software solutions and mentoring junior developers to elevate the entire engineering team.
+    <!-- ══ Skills ══ -->
+    <section id="skills" class="section">
+        <div class="shell">
+            <div class="section-head center" data-reveal>
+                <span class="eyebrow"><i></i>02 — Skills</span>
+                <h2 class="section-title">Technical arsenal</h2>
+                <p class="section-sub">The tools I reach for when the problem gets interesting.</p>
+            </div>
+
+            <div class="bento">
+                <article class="card card-lg spotlight" data-reveal data-tilt>
+                    <div class="card-icon accent-cyan"><svg class="icon"><use href="#i-java"/></svg></div>
+                    <h3>Java</h3>
+                    <p>Core language across every role — v8 through 21. Concurrency, JVM tuning, clean domain modelling.</p>
+                    <div class="chips"><span>Java 8</span><span>Java 17</span><span>Java 21</span><span>JVM</span></div>
+                </article>
+
+                <article class="card spotlight" data-reveal data-delay="60" data-tilt>
+                    <div class="card-icon accent-green"><svg class="icon"><use href="#i-leaf"/></svg></div>
+                    <h3>Spring Boot</h3>
+                    <p>The backbone framework for services, security and data access.</p>
+                </article>
+
+                <article class="card spotlight" data-reveal data-delay="120" data-tilt>
+                    <div class="card-icon accent-violet"><svg class="icon"><use href="#i-grid"/></svg></div>
+                    <h3>Microservices</h3>
+                    <p>Domain boundaries, resilience patterns, service-to-service contracts.</p>
+                </article>
+
+                <article class="card spotlight" data-reveal data-delay="60" data-tilt>
+                    <div class="card-icon accent-red"><svg class="icon"><use href="#i-shield"/></svg></div>
+                    <h3>Angular</h3>
+                    <p>Component-driven front ends wired to the services behind them.</p>
+                </article>
+
+                <article class="card spotlight" data-reveal data-delay="120" data-tilt>
+                    <div class="card-icon accent-blue"><svg class="icon"><use href="#i-cloud"/></svg></div>
+                    <h3>Cloud &amp; APIs</h3>
+                    <p>AWS deployments and REST APIs built for real traffic.</p>
+                </article>
+
+                <article class="card spotlight" data-reveal data-delay="180" data-tilt>
+                    <div class="card-icon accent-amber"><svg class="icon"><use href="#i-database"/></svg></div>
+                    <h3>Databases</h3>
+                    <p>SQL &amp; MySQL — schema design, query tuning, migrations.</p>
+                </article>
+
+                <article class="card spotlight" data-reveal data-delay="240" data-tilt>
+                    <div class="card-icon accent-orange"><svg class="icon"><use href="#i-code"/></svg></div>
+                    <h3>Web Fundamentals</h3>
+                    <p>HTML, CSS and JavaScript — the layer users actually touch.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ Experience ══ -->
+    <section id="experience" class="section">
+        <div class="shell">
+            <div class="section-head center" data-reveal>
+                <span class="eyebrow"><i></i>03 — Experience</span>
+                <h2 class="section-title">Professional journey</h2>
+            </div>
+
+            <div class="counter-card" data-reveal data-delay="80">
+                <p class="counter-label">Total experience · since Dec 2018</p>
+                <div id="experience-counter" class="counter-value">—</div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-rail" aria-hidden="true"><span id="railFill"></span></div>
+
+                <ol class="tl-list">
+                <li class="tl-item" data-reveal>
+                    <span class="tl-node" data-accent="cyan"></span>
+                    <div class="tl-card spotlight">
+                        <div class="tl-top">
+                            <div>
+                                <h3>Senior Software Engineer</h3>
+                                <p class="tl-org"><svg class="icon"><use href="#i-building"/></svg> Foneloan Pvt. Ltd</p>
+                            </div>
+                            <span class="tl-date" data-accent="cyan">Nov 2024 — Present</span>
+                        </div>
+                        <ul>
+                            <li>Spearheading a fintech platform built on microservice architecture and Java (v8, 17, 21).</li>
+                            <li>Leading resolution of production issues and delivery of new features.</li>
+                            <li>Mentoring junior engineers and conducting technical interviews.</li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="tl-item" data-reveal>
+                    <span class="tl-node" data-accent="blue"></span>
+                    <div class="tl-card spotlight">
+                        <div class="tl-top">
+                            <div>
+                                <h3>Senior Software Engineer</h3>
+                                <p class="tl-org"><svg class="icon"><use href="#i-building"/></svg> Cedargate Technologies</p>
+                            </div>
+                            <span class="tl-date" data-accent="blue">Jul 2021 — Nov 2024</span>
+                        </div>
+                        <ul>
+                            <li>Led a team for over two years — sprint planning, prioritisation and technical support.</li>
+                            <li>Drove technical decision-making and ran code reviews.</li>
+                            <li>Projects: Healthcare Benefits Analytics, Value-based Care Analytics.</li>
+                        </ul>
+                        <div class="chips"><span>Java</span><span>AWS</span><span>Angular</span><span>MySQL</span></div>
+                    </div>
+                </li>
+
+                <li class="tl-item" data-reveal>
+                    <span class="tl-node" data-accent="violet"></span>
+                    <div class="tl-card spotlight">
+                        <div class="tl-top">
+                            <div>
+                                <h3>Software Engineer</h3>
+                                <p class="tl-org"><svg class="icon"><use href="#i-building"/></svg> F1Soft International</p>
+                            </div>
+                            <span class="tl-date" data-accent="violet">Apr 2019 — Jun 2021</span>
+                        </div>
+                        <ul>
+                            <li>Built secure payment systems with Java EE, Spring Boot and Angular.</li>
+                            <li>Projects: FoneLoan, MyPay (formerly SmartCard Nepal).</li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="tl-item" data-reveal>
+                    <span class="tl-node" data-accent="emerald"></span>
+                    <div class="tl-card spotlight">
+                        <div class="tl-top">
+                            <div>
+                                <h3>Java Developer</h3>
+                                <p class="tl-org"><svg class="icon"><use href="#i-building"/></svg> Nyatapol Technologies</p>
+                            </div>
+                            <span class="tl-date" data-accent="emerald">Dec 2018 — Apr 2019</span>
+                        </div>
+                        <ul>
+                            <li>Developed web applications with Core Java, HTML, CSS, JavaScript and Bootstrap.</li>
+                            <li>Projects: Employee management systems for Sunrise Bank and Global Bank.</li>
+                        </ul>
+                    </div>
+                </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ Education ══ -->
+    <section id="education" class="section">
+        <div class="shell">
+            <div class="section-head center" data-reveal>
+                <span class="eyebrow"><i></i>04 — Education</span>
+                <h2 class="section-title">Where it started</h2>
+            </div>
+
+            <div class="edu-grid">
+                <article class="card edu spotlight" data-reveal data-tilt>
+                    <span class="edu-year">2013</span>
+                    <div class="card-icon accent-cyan"><svg class="icon"><use href="#i-cap"/></svg></div>
+                    <h3>B.E. in Computer Engineering</h3>
+                    <p>Khwopa Engineering College, Bhaktapur</p>
+                </article>
+
+                <article class="card edu spotlight" data-reveal data-delay="80" data-tilt>
+                    <span class="edu-year">2011</span>
+                    <div class="card-icon accent-blue"><svg class="icon"><use href="#i-layers"/></svg></div>
+                    <h3>High School</h3>
+                    <p>Golden Future Higher Secondary School, Kavrepalanchok</p>
+                </article>
+
+                <article class="card edu spotlight" data-reveal data-delay="160" data-tilt>
+                    <span class="edu-year">2000</span>
+                    <div class="card-icon accent-violet"><svg class="icon"><use href="#i-book"/></svg></div>
+                    <h3>School Level</h3>
+                    <p>Janata Higher Secondary School, Panchkhal</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ Contact ══ -->
+    <section id="contact" class="section contact">
+        <div class="shell">
+            <div class="contact-card" data-reveal>
+                <div class="contact-glow" aria-hidden="true"></div>
+
+                <span class="eyebrow"><i></i>05 — Contact</span>
+                <h2 class="contact-title">Let's build something <em class="grad">great.</em></h2>
+                <p class="section-sub">
+                    Open to new opportunities, collaborations, or a quick conversation
+                    about software architecture.
                 </p>
+
+                <div class="contact-actions">
+                    <a href="mailto:dhungana1111@gmail.com" class="btn btn-light btn-lg" data-magnetic>
+                        <svg class="icon"><use href="#i-mail"/></svg>
+                        dhungana1111@gmail.com
+                    </a>
+                    <button class="btn btn-ghost btn-lg" id="copyMail" data-mail="dhungana1111@gmail.com" data-magnetic>
+                        <svg class="icon"><use href="#i-copy"/></svg>
+                        <span>Copy</span>
+                    </button>
+                </div>
+
+                <div class="socials">
+                    <a href="https://github.com/kripashwar700312" target="_blank" rel="noopener" aria-label="GitHub" data-magnetic>
+                        <svg class="icon"><use href="#i-github"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/kripashwar-dhungana/" target="_blank" rel="noopener" aria-label="LinkedIn" data-magnetic>
+                        <svg class="icon"><use href="#i-linkedin"/></svg>
+                    </a>
+                    <a href="mailto:dhungana1111@gmail.com" aria-label="Email" data-magnetic>
+                        <svg class="icon"><use href="#i-mail"/></svg>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="scroll-mt-32 relative">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold mb-4 font-display">Technical Arsenal</h2>
-            <div class="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-600 mx-auto rounded-full"></div>
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            <!-- Skill 1 -->
-            <div class="glass-panel p-6 rounded-3xl text-center group">
-                <div class="w-14 h-14 mx-auto bg-slate-800/50 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 border border-white/5">
-                    <i class="fab fa-java text-3xl text-cyan-400"></i>
-                </div>
-                <h3 class="font-bold text-lg text-white">Java</h3>
-                <p class="text-xs text-gray-400 mt-1">v8, 17, 21</p>
-            </div>
-            <!-- Skill 2 -->
-            <div class="glass-panel p-6 rounded-3xl text-center group">
-                <div class="w-14 h-14 mx-auto bg-slate-800/50 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 border border-white/5">
-                    <i class="fas fa-leaf text-3xl text-green-400"></i>
-                </div>
-                <h3 class="font-bold text-lg text-white">Spring Boot</h3>
-                <p class="text-xs text-gray-400 mt-1">Core Framework</p>
-            </div>
-            <!-- Skill 3 -->
-            <div class="glass-panel p-6 rounded-3xl text-center group">
-                <div class="w-14 h-14 mx-auto bg-slate-800/50 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 border border-white/5">
-                    <i class="fab fa-angular text-3xl text-red-500"></i>
-                </div>
-                <h3 class="font-bold text-lg text-white">Angular</h3>
-                <p class="text-xs text-gray-400 mt-1">Frontend UI</p>
-            </div>
-            <!-- Skill 4 -->
-            <div class="glass-panel p-6 rounded-3xl text-center group">
-                <div class="w-14 h-14 mx-auto bg-slate-800/50 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 border border-white/5">
-                    <i class="fab fa-html5 text-3xl text-orange-400"></i>
-                </div>
-                <h3 class="font-bold text-lg text-white">HTML/CSS/JS</h3>
-                <p class="text-xs text-gray-400 mt-1">Web Fundamentals</p>
-            </div>
-            <!-- Skill 5 -->
-            <div class="glass-panel p-6 rounded-3xl text-center group">
-                <div class="w-14 h-14 mx-auto bg-slate-800/50 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 border border-white/5">
-                    <i class="fas fa-cloud text-3xl text-blue-400"></i>
-                </div>
-                <h3 class="font-bold text-lg text-white">Cloud & APIs</h3>
-                <p class="text-xs text-gray-400 mt-1">AWS / REST</p>
-            </div>
-            <!-- Skill 6 -->
-            <div class="glass-panel p-6 rounded-3xl text-center group">
-                <div class="w-14 h-14 mx-auto bg-slate-800/50 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 border border-white/5">
-                    <i class="fas fa-database text-3xl text-yellow-400"></i>
-                </div>
-                <h3 class="font-bold text-lg text-white">Databases</h3>
-                <p class="text-xs text-gray-400 mt-1">SQL / MySQL</p>
-            </div>
-            <!-- Skill 7 -->
-            <div class="glass-panel p-6 rounded-3xl text-center group md:col-start-2 lg:col-auto">
-                <div class="w-14 h-14 mx-auto bg-slate-800/50 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 border border-white/5">
-                    <i class="fas fa-network-wired text-3xl text-purple-400"></i>
-                </div>
-                <h3 class="font-bold text-lg text-white">Microservices</h3>
-                <p class="text-xs text-gray-400 mt-1">Architecture</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="scroll-mt-32 relative">
-        <div class="text-center mb-10">
-            <h2 class="text-4xl font-bold mb-4 font-display">Professional Journey</h2>
-            <div class="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-600 mx-auto rounded-full mb-10"></div>
-
-            <!-- Live KPI Counter -->
-            <div class="glass-panel inline-block px-10 py-6 rounded-2xl border-cyan-400/40 shadow-[0_0_20px_rgba(6,182,212,0.15)]">
-                <p class="text-cyan-400 text-xs font-bold tracking-[0.15em] uppercase mb-2">Total Experience (Since Dec 2018)</p>
-                <div id="experience-counter" class="text-3xl font-black text-white drop-shadow-md">Loading...</div>
-            </div>
-        </div>
-
-        <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-1 before:bg-gradient-to-b before:from-cyan-500 before:via-blue-500 before:to-transparent before:opacity-30 mt-16">
-
-            <!-- Job 1 -->
-            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                <div class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-900 border-4 border-cyan-400 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 relative">
-                    <span class="absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-30 animate-ping"></span>
-                </div>
-                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] glass-panel p-8 rounded-3xl hover:border-cyan-400/50">
-                    <div class="flex flex-col xl:flex-row xl:justify-between xl:items-start mb-4">
-                        <div>
-                            <h3 class="text-2xl font-bold text-white mb-1 font-display">Senior Software Engineer</h3>
-                            <h4 class="text-cyan-400 font-semibold"><i class="fas fa-building mr-2 text-sm"></i>Foneloan Pvt. Ltd</h4>
-                        </div>
-                        <span class="mt-3 xl:mt-0 px-3 py-1 bg-cyan-400/10 text-cyan-300 text-xs font-bold rounded-full border border-cyan-400/20 w-max">Nov 2024 - Present</span>
-                    </div>
-                    <ul class="text-gray-400 text-sm leading-relaxed list-disc list-inside space-y-2">
-                        <li>Spearheading the development of a fintech application based on microservices architecture and Java (v8, 17, 21).</li>
-                        <li>Leading the resolution of production issues and developing new features.</li>
-                        <li>Mentoring junior resources and conducting interviews.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Job 2 -->
-            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                <div class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-900 border-4 border-blue-500 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10"></div>
-                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] glass-panel p-8 rounded-3xl hover:border-blue-500/50">
-                    <div class="flex flex-col xl:flex-row xl:justify-between xl:items-start mb-4">
-                        <div>
-                            <h3 class="text-2xl font-bold text-white mb-1 font-display">Senior Software Engineer</h3>
-                            <h4 class="text-blue-400 font-semibold"><i class="fas fa-building mr-2 text-sm"></i>Cedargate Technologies</h4>
-                        </div>
-                        <span class="mt-3 xl:mt-0 px-3 py-1 bg-blue-500/10 text-blue-300 text-xs font-bold rounded-full border border-blue-500/20 w-max">Jul 2021 - Nov 2024</span>
-                    </div>
-                    <ul class="text-gray-400 text-sm leading-relaxed list-disc list-inside space-y-2">
-                        <li>Led a team for over two years, managing sprint planning, task prioritization, and providing technical support.</li>
-                        <li>Coordinated technical decision-making and conducted code reviews.</li>
-                        <li>Projects: Healthcare Benefits Analytics, Value-based Care Analytics.</li>
-                        <li>Technologies: Java, AWS, Angular, MySQL.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Job 3 -->
-            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                <div class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-900 border-4 border-indigo-400 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10"></div>
-                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] glass-panel p-8 rounded-3xl hover:border-indigo-400/50">
-                    <div class="flex flex-col xl:flex-row xl:justify-between xl:items-start mb-4">
-                        <div>
-                            <h3 class="text-2xl font-bold text-white mb-1 font-display">Software Engineer</h3>
-                            <h4 class="text-indigo-400 font-semibold"><i class="fas fa-building mr-2 text-sm"></i>F1Soft International</h4>
-                        </div>
-                        <span class="mt-3 xl:mt-0 px-3 py-1 bg-indigo-400/10 text-indigo-300 text-xs font-bold rounded-full border border-indigo-400/20 w-max">Apr 2019 - Jun 2021</span>
-                    </div>
-                    <ul class="text-gray-400 text-sm leading-relaxed list-disc list-inside space-y-2">
-                        <li>Developing secure payment systems utilizing Java EE, Spring Boot, and Angular.</li>
-                        <li>Projects: FoneLoan, MyPay (former smartcardnepal).</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Job 4 -->
-            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                <div class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-900 border-4 border-emerald-400 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10"></div>
-                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] glass-panel p-8 rounded-3xl hover:border-emerald-400/50">
-                    <div class="flex flex-col xl:flex-row xl:justify-between xl:items-start mb-4">
-                        <div>
-                            <h3 class="text-2xl font-bold text-white mb-1 font-display">Java Developer</h3>
-                            <h4 class="text-emerald-400 font-semibold"><i class="fas fa-building mr-2 text-sm"></i>Nyatapol Technologies</h4>
-                        </div>
-                        <span class="mt-3 xl:mt-0 px-3 py-1 bg-emerald-400/10 text-emerald-300 text-xs font-bold rounded-full border border-emerald-400/20 w-max">Dec 2018 - Apr 2019</span>
-                    </div>
-                    <ul class="text-gray-400 text-sm leading-relaxed list-disc list-inside space-y-2">
-                        <li>Developing web applications using Core Java, HTML, CSS, JavaScript, and Bootstrap.</li>
-                        <li>Projects: Employee management system of Sunrise Bank Limited and Global Bank.</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Education Grid -->
-    <section id="education" class="scroll-mt-32">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold mb-4 font-display">Education</h2>
-            <div class="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-600 mx-auto rounded-full"></div>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-6">
-            <!-- Edu 1 -->
-            <div class="glass-panel p-8 rounded-3xl border-t-4 border-t-cyan-400 text-center">
-                <div class="w-12 h-12 mx-auto bg-cyan-400/10 rounded-xl flex items-center justify-center mb-4 border border-cyan-400/20">
-                    <i class="fas fa-graduation-cap text-xl text-cyan-400"></i>
-                </div>
-                <h3 class="font-bold text-lg text-white mb-2 font-display">B.E. in Computer Engineering</h3>
-                <p class="text-gray-400 text-sm mb-4">Khwopa Engineering College, Bhaktapur</p>
-                <span class="text-xs font-bold text-cyan-400 bg-cyan-400/10 px-3 py-1 rounded-full">2013</span>
-            </div>
-
-            <!-- Edu 2 -->
-            <div class="glass-panel p-8 rounded-3xl border-t-4 border-t-blue-500 text-center">
-                <div class="w-12 h-12 mx-auto bg-blue-500/10 rounded-xl flex items-center justify-center mb-4 border border-blue-500/20">
-                    <i class="fas fa-school text-xl text-blue-400"></i>
-                </div>
-                <h3 class="font-bold text-lg text-white mb-2 font-display">High School</h3>
-                <p class="text-gray-400 text-sm mb-4">Golden Future Higher Secondary School, Kavrepalanchwok</p>
-                <span class="text-xs font-bold text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full">2011</span>
-            </div>
-
-            <!-- Edu 3 -->
-            <div class="glass-panel p-8 rounded-3xl border-t-4 border-t-indigo-400 text-center">
-                <div class="w-12 h-12 mx-auto bg-indigo-400/10 rounded-xl flex items-center justify-center mb-4 border border-indigo-400/20">
-                    <i class="fas fa-book text-xl text-indigo-400"></i>
-                </div>
-                <h3 class="font-bold text-lg text-white mb-2 font-display">School Level</h3>
-                <p class="text-gray-400 text-sm mb-4">Janata Higher Secondary School, Panchkhal</p>
-                <span class="text-xs font-bold text-indigo-400 bg-indigo-400/10 px-3 py-1 rounded-full">2000</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact/Footer Section -->
-    <footer id="contact" class="pb-10">
-        <div class="glass-panel p-12 md:p-20 rounded-[3rem] text-center relative overflow-hidden">
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-lg h-full bg-cyan-500/10 blur-[100px] pointer-events-none"></div>
-
-            <h2 class="text-4xl md:text-5xl font-bold mb-6 font-display">Let's build something <span class="text-cyan-400 italic">great.</span></h2>
-            <p class="text-gray-400 mb-10 max-w-xl mx-auto text-lg">Currently open for new opportunities, collaborations, or a quick chat about software architecture.</p>
-
-            <a href="mailto:dhungana1111@gmail.com" class="inline-flex items-center justify-center px-10 py-5 text-xl font-bold text-slate-900 bg-white rounded-full hover:scale-105 transition-transform duration-300 shadow-[0_0_40px_rgba(255,255,255,0.2)] mb-12">
-                <i class="fas fa-paper-plane mr-3 text-cyan-500"></i> dhungana1111@gmail.com
-            </a>
-
-            <div class="flex justify-center space-x-6 border-t border-white/10 pt-10">
-                <a href="https://github.com/kripashwar700312" target="_blank" class="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-cyan-400 hover:bg-white/10 hover:-translate-y-2 transition-all duration-300 text-2xl">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/kripashwar-dhungana/" target="_blank" class="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-blue-400 hover:bg-white/10 hover:-translate-y-2 transition-all duration-300 text-2xl">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-            </div>
-            <p class="mt-12 text-sm text-gray-500 font-medium tracking-wider">
-                © 2025 KRIPASHWAR DHUNGANA.
-            </p>
+    <footer class="footer">
+        <div class="shell footer-inner">
+            <p>© <span id="year">2026</span> Kripashwar Dhungana</p>
+            <p class="footer-note">Designed &amp; built in Kathmandu</p>
         </div>
     </footer>
-
 </main>
+
+<button class="to-top" id="toTop" aria-label="Back to top">
+    <svg class="icon"><use href="#i-arrow-up"/></svg>
+</button>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
 </body>
 </html>

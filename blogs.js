@@ -1,34 +1,87 @@
-const blogList = document.getElementById('blog-list');
+/* Blog list — rendered into #blog-list on blog.html */
+(function () {
+    'use strict';
 
-const blogs = [
-  {id:"blog1", title:"Blog 1", date:"2025-09-07", summary:"This is summary 1...", content:"<p>Full content of blog 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>More details here...</p>"},
-  {id:"blog2", title:"Blog 2", date:"2025-09-06", summary:"This is summary 2...", content:"<p>Full content of blog 2. Pellentesque euismod urna eu tincidunt consectetur.</p>"}
-];
+    const list = document.getElementById('blog-list');
+    if (!list) return;
 
-blogs.forEach(blog => {
-  const card = document.createElement('div');
-  card.className = 'blog-card';
-  card.innerHTML = `
-    <h2>${blog.title}</h2>
-    <p class="summary">${blog.summary}</p>
-    <button class="read-more">Read More</button>
-    <div class="full-content">${blog.content}</div>
-  `;
-  blogList.appendChild(card);
-});
+    const posts = [
+        {
+            id: 'blog1',
+            title: 'Designing service boundaries that survive contact with production',
+            date: '2025-09-07',
+            tags: ['Microservices', 'Java'],
+            summary: 'Splitting a monolith is easy. Splitting it along boundaries that still make sense a year later is the hard part.',
+            content: '<p>Coming soon.</p>'
+        },
+        {
+            id: 'blog2',
+            title: 'Spring Boot startup time: where the seconds actually go',
+            date: '2025-09-06',
+            tags: ['Spring Boot', 'Performance'],
+            summary: 'A practical pass through classpath scanning, lazy initialisation and the trade-offs of each.',
+            content: '<p>Coming soon.</p>'
+        }
+    ];
 
-blogList.addEventListener('click', (e) => {
-  if(e.target.classList.contains('read-more')) {
-    const card = e.target.closest('.blog-card');
-    const content = card.querySelector('.full-content');
-    if(content.style.maxHeight) {
-      // Collapse
-      content.style.maxHeight = null;
-      e.target.textContent = "Read More";
+    const fmt = (iso) => new Date(iso).toLocaleDateString('en-GB', {
+        day: 'numeric', month: 'short', year: 'numeric'
+    });
+
+    posts.forEach((post, i) => {
+        const card = document.createElement('article');
+        card.className = 'card blog-card spotlight';
+        card.dataset.reveal = '';
+        card.style.setProperty('--d', `${i * 90}ms`);
+        card.innerHTML = `
+            <div class="blog-meta">
+                <time datetime="${post.date}">${fmt(post.date)}</time>
+                <div class="chips">${post.tags.map((t) => `<span>${t}</span>`).join('')}</div>
+            </div>
+            <h3>${post.title}</h3>
+            <p>${post.summary}</p>
+            <button class="blog-more" type="button" aria-expanded="false">
+                Read more <svg class="icon"><use href="#i-arrow-ur"/></svg>
+            </button>
+            <div class="blog-body">${post.content}</div>
+        `;
+        list.appendChild(card);
+    });
+
+    list.addEventListener('click', (e) => {
+        const btn = e.target.closest('.blog-more');
+        if (!btn) return;
+
+        const body = btn.parentElement.querySelector('.blog-body');
+        const open = btn.getAttribute('aria-expanded') === 'true';
+
+        body.style.maxHeight = open ? '' : `${body.scrollHeight}px`;
+        btn.setAttribute('aria-expanded', String(!open));
+        btn.firstChild.textContent = open ? 'Read more ' : 'Read less ';
+    });
+
+    // Fade the cards in.
+    if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('in');
+                io.unobserve(entry.target);
+            });
+        }, { threshold: 0.15 });
+        list.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
     } else {
-      // Expand
-      content.style.maxHeight = content.scrollHeight + "px";
-      e.target.textContent = "Read Less";
+        list.querySelectorAll('[data-reveal]').forEach((el) => el.classList.add('in'));
     }
-  }
-});
+
+    // Mouse-follow spotlight, matching the main page.
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        list.querySelectorAll('.spotlight').forEach((card) => {
+            card.addEventListener('pointermove', (ev) => {
+                const r = card.getBoundingClientRect();
+                card.style.setProperty('--mx', `${ev.clientX - r.left}px`);
+                card.style.setProperty('--my', `${ev.clientY - r.top}px`);
+            });
+        });
+    }
+})();
