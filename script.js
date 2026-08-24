@@ -37,6 +37,15 @@
             `${years}<u>yrs</u> ${months}<u>mos</u> ${days}<u>days</u>`;
     }
 
+    /* Keep static [data-count] stats in sync with the live experience maths
+       so the hero number never drifts from the running counter. */
+    function syncDerivedCounts() {
+        const { years } = diffFrom(START);
+        $$('[data-count-source="experience-years"]').forEach((el) => {
+            el.dataset.count = String(years);
+        });
+    }
+
     function renderAboutExperience() {
         const el = $('#dynamic-about-exp');
         if (!el) return;
@@ -406,6 +415,7 @@
 
         splitLines();
         initReveal();
+        syncDerivedCounts();
         initCounters();
         initScroll();
         initNav();
